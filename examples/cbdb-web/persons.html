@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <title>landing-page</title>
+
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+
+    <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+        <script src="js/respondF.min.js"></script>
+    <![endif]-->
+
+    <script src="js/jquery.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.0.4/popper.js"></script>
+    <script src="https://gw.alipayobjects.com/os/antv/pkg/_antv.g2-3.2.8-beta.5/dist/g2.min.js"></script>
+    <script src="https://gw.alipayobjects.com/os/antv/pkg/_antv.data-set-0.8.9/dist/data-set.min.js"></script>
+    <script src="https://gw.alipayobjects.com/os/antv/assets/lib/lodash-4.17.4.min.js"></script>
+    <script src="/utils/Gateway.js"></script>
+</head>
+<!--/head-->
+
+<body class="persons">
+    <header id="header">
+        <div class="navbar navbar-inverse" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">
+                        <img class="logo" src="https://projects.iq.harvard.edu/files/chinesecbdb/files/logo_0_1.png?m=1439310192"
+                            alt="logo" />
+                        <span style="color:black">CBDB</span>
+                    </a>
+                </div>
+                <ul class="nav justify-content-end">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">首页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="persons.html">人物列表</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!--/#header-->
+
+    <div id="home-slider">
+        <div class="search1-wrap">
+            <div>
+                <div class="name">姓名：</div>
+                <div class="description">
+                    <input type="text" id="s1-name" name="name" class="form-control" required="required" placeholder="人名" />
+                </div>
+            </div>
+
+            <div>
+                <div class="name">别名：</div>
+                <div class="description">
+                    <div class="input-group mb-3">
+                        <select class="custom-select" id="inputGroupSelect00">
+                        </select>
+                        <input type="text" id="s1-othername" class="form-control" aria-label="Text input with dropdown button" />
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="name">朝代：</div>
+                <div class="description">
+                    <select class="custom-select" id="inputGroupSelect01">
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <div class="name">人物生平地址：</div>
+                <div class="description">
+                    <div class="input-group mb-3">
+                        <select class="custom-select" id="inputGroupSelect02">
+                        </select>
+                        <input type="text" id="s1-address" class="form-control" aria-label="Text input with dropdown button">
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="name">社会身份类型：</div>
+                <div class="description">
+                    <select class="custom-select" id="inputGroupSelect03">
+                    </select>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="button-wrap">
+            <button type="button" id="btn-reset" class="btn btn-light">重置</button>
+            <button type="button" id="btn-search" class="btn btn-primary">搜索</button>
+        </div>
+    </div>
+    <!--/#home-slider-->
+
+    <div class="bottom">
+        <div class="search2level">
+            <div>
+                <a class="btn btn-primary s2-title s2-title-top" data-toggle="collapse" href="#collapseExample1" role="button"
+                    aria-expanded="false" aria-controls="collapseExample1">
+                    社会身份
+                </a>
+                <div class="collapse show" id="collapseExample1">
+                    <div class="card card-body" id="fenmian-specialityCount">
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <a class="btn btn-primary s2-title" data-toggle="collapse" href="#collapseExample3" role="button"
+                    aria-expanded="false" aria-controls="collapseExample3">
+                    朝代
+                </a>
+                <div class="collapse show " id="collapseExample3">
+                    <div class="card card-body" id="fenmian-dynastyCount">
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <a class="btn btn-primary s2-title" data-toggle="collapse" href="#collapseExample2" role="button"
+                    aria-expanded="false" aria-controls="collapseExample2">
+                    籍贯
+                </a>
+                <div class="collapse" id="collapseExample2">
+                    <div class="card card-body" id="fenmian-nativePlaceCount">
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <a class="btn btn-primary s2-title" data-toggle="collapse" href="#collapseExample4" role="button"
+                    aria-expanded="false" aria-controls="collapseExample4">
+                    入仕方式类型
+                </a>
+                <div class="collapse" id="collapseExample4">
+                    <div class="card card-body s2-card-bottom" id="fenmian-rushiTypeCount">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="list">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">序号</th>
+                        <th scope="col">姓名</th>
+                        <th scope="col">性别</th>
+                        <th scope="col">朝代</th>
+                        <th scope="col">生卒年</th>
+                        <th scope="col">籍贯</th>
+                        <th scope="col">郡望</th>
+                        <th scope="col">操作</th>
+                    </tr>
+                </thead>
+                <tbody id="results">
+                </tbody>
+            </table>
+
+            <div>
+                <nav class="pagination-wrap" aria-label="Page navigation example">
+                    <div class="jump-page-wrap">
+                        <span>跳至</span>
+                        <input type="number" id="input_jumppageNumber" />
+                        <span>页</span>
+                    </div>
+                    <ul id="pagination" class="pagination">
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/wow.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/persons.js"></script>
+
+</body>
+
+</html>

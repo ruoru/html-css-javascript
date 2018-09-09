@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <title>landing-page</title>
+
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+
+    <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+        <script src="js/respondF.min.js"></script>
+    <![endif]-->
+
+    <script src="js/jquery.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.0.4/popper.js"></script>
+    <script src="https://gw.alipayobjects.com/os/antv/pkg/_antv.g2-3.2.8-beta.5/dist/g2.min.js"></script>
+    <script src="https://gw.alipayobjects.com/os/antv/pkg/_antv.data-set-0.8.9/dist/data-set.min.js"></script>
+    <script src="https://gw.alipayobjects.com/os/antv/assets/lib/lodash-4.17.4.min.js"></script>
+    <script src="/utils/Gateway.js"></script>
+</head>
+<!--/head-->
+
+<body class="person-detail">
+    <header id="header">
+        <div class="navbar navbar-inverse" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">
+                        <img class="logo" src="https://projects.iq.harvard.edu/files/chinesecbdb/files/logo_0_1.png?m=1439310192"
+                            alt="logo" />
+                        <span style="color:black">CBDB</span>
+                    </a>
+                </div>
+                <ul class="nav justify-content-end">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">首页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="persons.html">人物列表</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!--/#header-->
+
+    <div id="home-slider">
+        <div id="person_name">
+        </div>
+        <div>
+            <table id="tb0" class="table">
+            </table>
+        </div>
+    </div>
+    <!--/#home-slider-->
+
+    <div class="content">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="tab-a-tb1" data-toggle="tab" href="#tab-tb1" role="tab" aria-controls="tab-tb1"
+                    aria-selected="true">社会身份</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="tabv-tb2" data-toggle="tab" href="#tab-tb2" role="tab" aria-controls="tab-tb2"
+                    aria-selected="false">入仕</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="tab-a-tb3" data-toggle="tab" href="#tab-tb3" role="tab" aria-controls="tab-tb3"
+                    aria-selected="false">职官与除授</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="tab-a-tb4" data-toggle="tab" href="#tab-tb4" role="tab" aria-controls="tab-tb4"
+                    aria-selected="false">生平关联地址</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="tab-a-tb5" data-toggle="tab" href="#tab-tb5" role="tab" aria-controls="tab-tb5"
+                    aria-selected="false">亲属关系</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="tab-a-tb6" data-toggle="tab" href="#tab-tb6" role="tab" aria-controls="tab-tb6"
+                    aria-selected="false">社会关系</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="tab-a-tb7" data-toggle="tab" href="#tab-tb7" role="tab" aria-controls="tab-tb7"
+                    aria-selected="false">著述</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="tab-a-tb8" data-toggle="tab" href="#tab-tb8" role="tab" aria-controls="tab-tb8"
+                    aria-selected="false">社会机构</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="tab-a-tb9" data-toggle="tab" href="#tab-tb9" role="tab" aria-controls="tab-tb9"
+                    aria-selected="false">出处</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="tab-tb1" role="tabpanel" aria-labelledby="tab-a-tb1">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">序号</th>
+                            <th scope="col">社会身份持有始年</th>
+                            <th scope="col">社会身份持有终年</th>
+                            <th scope="col">社会身份类型</th>
+                            <th scope="col">社会身份</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tb1">
+                    </tbody>
+                </table>
+            </div>
+            <div class="tab-pane fade" id="tab-tb2" role="tabpanel" aria-labelledby="tab-a-tb2">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">序号</th>
+                            <th scope="col">入仕方式类型</th>
+                            <th scope="col">入仕方式</th>
+                            <th scope="col">入仕年</th>
+                            <th scope="col">入仕年龄</th>
+                            <th scope="col">入仕后被任命的官职</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tb2">
+                    </tbody>
+                </table>
+            </div>
+            <div class="tab-pane fade" id="tab-tb3" role="tabpanel" aria-labelledby="tab-a-tb3">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">序号</th>
+                            <th scope="col">除授类别</th>
+                            <th scope="col">职官类别</th>
+                            <th scope="col">除授始年</th>
+                            <th scope="col">除授终年</th>
+                            <th scope="col">赴任地址</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tb3">
+                    </tbody>
+                </table>
+            </div>
+            <div class="tab-pane fade" id="tab-tb4" role="tabpanel" aria-labelledby="tab-a-tb4">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">序号</th>
+                            <th scope="col">关联始年</th>
+                            <th scope="col">关联终年</th>
+                            <th scope="col">生平关联地址类型</th>
+                            <th scope="col">生平关联地址</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tb4">
+                    </tbody>
+                </table>
+            </div>
+            <div class="tab-pane fade" id="tab-tb5" role="tabpanel" aria-labelledby="tab-a-tb5">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">序号</th>
+                            <th scope="col">亲属关系类型</th>
+                            <th scope="col">亲属关系</th>
+                            <th scope="col">关系人</th>
+                            <th scope="col">对应服丧类型</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tb5">
+                    </tbody>
+                </table>
+            </div>
+            <div class="tab-pane fade" id="tab-tb6" role="tabpanel" aria-labelledby="tab-a-tb6">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">序号</th>
+                            <th scope="col">社会关系类型</th>
+                            <th scope="col">社会关系</th>
+                            <th scope="col">关系人</th>
+                            <th scope="col">关系建立年份</th>
+                            <th scope="col">关系解散地点</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tb6">
+                    </tbody>
+                </table>
+            </div>
+            <div class="tab-pane fade" id="tab-tb7" role="tabpanel" aria-labelledby="tab-a-tb7">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">序号</th>
+                            <th scope="col">标题</th>
+                            <th scope="col">文学作品形式</th>
+                            <th scope="col">文本类型</th>
+                            <th scope="col">人物角色</th>
+                            <th scope="col">成书年</th>
+                            <th scope="col">出版年</th>
+                            <th scope="col">资料存佚情况</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tb7">
+                    </tbody>
+                </table>
+            </div>
+            <div class="tab-pane fade" id="tab-tb8" role="tabpanel" aria-labelledby="tab-a-tb8">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">序号</th>
+                            <th scope="col">机构类型</th>
+                            <th scope="col">社会机构</th>
+                            <th scope="col">所属朝代</th>
+                            <th scope="col">机构建立始年</th>
+                            <th scope="col">机构解散终年</th>
+                            <th scope="col">机构地址</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tb8">
+                    </tbody>
+                </table>
+            </div>
+            <div class="tab-pane fade" id="tab-tb9" role="tabpanel" aria-labelledby="tab-a-tb9">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">序号</th>
+                            <th scope="col">出处</th>
+                            <th scope="col">页码</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tb9">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/wow.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/person-detail.js"></script>
+
+</body>
+
+</html>
